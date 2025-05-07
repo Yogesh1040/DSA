@@ -10,6 +10,7 @@ public class MyLinkedList {
 		LinkedList ll = new LinkedList();
 		LinkedList ll2 = new LinkedList();
 		int ch;
+		@SuppressWarnings("resource")
 		Scanner s = new Scanner(System.in);
 		
 		do {
@@ -33,6 +34,9 @@ public class MyLinkedList {
 			System.out.println("         15. Display Linked List");
 			System.out.println("         16. Alternate Concat");
 			System.out.println("         17. Even Odd Split");
+			System.out.println("         18. Display using Recursion");
+			System.out.println("         19. Reverse Head");
+			System.out.println("         20. Forward and Reverse ");
 			System.out.println("          0. Exit");
 			System.out.println("==================================================================");
 			System.out.println();
@@ -192,6 +196,23 @@ public class MyLinkedList {
 				case 17:
 				{
 					ll.spiltEO();
+					break;
+				}
+				case 18:
+				{
+					ll.display(ll.getHead());
+					System.out.println();
+					break;
+				}
+				case 19:
+				{
+					ll.setHead(ll.reverseHead(ll.getHead()));
+					break;
+				}
+				case 20:
+				{
+					System.out.print("Forward"+" - ");
+					ll.ForwardReverse(ll.getHead());
 					break;
 				}
 				case 0:
