@@ -242,7 +242,7 @@ public class LinkedList
 		}
 		
 		IntNode itr = head;
-		int i;
+		
 		
 		while((itr.getNext().getNext() != null) && (itr.getNext().getNext().getData() != key))
 		{
@@ -439,5 +439,51 @@ public class LinkedList
 
 		return str;
 	}
+	
+	public void display(IntNode temp)
+	{
+		if(temp == null)
+			return;
+		System.out.print(temp.getData() + " ");
+		display(temp.getNext());
+	}
+	
+	public IntNode reverseHead(IntNode head)
+	{
+		IntNode temp;
+		if(head.getNext() == null)
+			return head;
+		
+		temp = reverseHead(head.getNext());
+		head.getNext().setNext(head);
+		head.setNext(null);
+		return temp;
+	}
+	
+	public void displayFR(LinkedList l)
+	{
+		System.out.print("Forward - ");
+		l.display(l.getHead());
+		l.setHead(l.reverseHead(l.getHead()));
+		System.out.println();
+		System.out.print("Reverse - ");
+		l.display(l.getHead());
+	}
 
+	
+	public void ForwardReverse(IntNode temp)
+	{
+		if(temp == null)
+			{System.out.println();
+			System.out.print("Reverse"+" - ");
+			return;
+			}
+		
+		System.out.print(temp.getData()+" ");
+		ForwardReverse(temp.getNext());
+		System.out.print(temp.getData()+" ");
+	}
+	
+	
+	
 }
